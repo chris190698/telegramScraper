@@ -111,6 +111,10 @@ $("#json").on('click', _ => {
     }
 });
 
+$("#msg").on('click', _ => {
+    window.location.href = "sendMessage.php";
+});
+
 $('.card').on('click', function (e) {
     if (!$(e.target).is('input:checkbox')) {
         let $checkbox = $(this).find('input:checkbox');

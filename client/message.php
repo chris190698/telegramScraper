@@ -73,6 +73,7 @@ require 'layouts/head.php';
                     </tbody>
                 </table>
             </div>
+        </div>
 
     </fieldset>
     <fieldset class="border mt-3 p-2">
@@ -126,14 +127,17 @@ require 'layouts/head.php';
         </div>
     </fieldset>
     <div class="row mt-3">
-        <div class="col-sm-4"></div>
+        <div class="col-sm-3"></div>
         <div class="col-sm-2">
             <button id="csv" class="btn btn-success" type="button">Download csv</button>
         </div>
         <div class="col-sm-2">
             <button id="json" class="btn btn-success" type="button">Download json</button>
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-2">
+            <button id="msg" class="btn btn-success" type="button">Invia un messaggio</button>
+        </div>
+        <div class="col-sm-3"></div>
     </div>
     <p class="mt-5 pb-2 text-muted">TG Scraper &copy; 2020-<?php echo date('Y'); ?></p>
 </div>
