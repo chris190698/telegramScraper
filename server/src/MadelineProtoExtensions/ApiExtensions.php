@@ -11,6 +11,7 @@ use Amp\Http\Server\Response;
 use Amp\Promise;
 use danog\MadelineProto;
 use danog\MadelineProto\StrTools;
+use stdClass;
 use TelegramApiServer\EventObservers\EventHandler;
 use TelegramApiServer\Exceptions\MediaTooBig;
 use TelegramApiServer\Exceptions\NoMediaException;
@@ -559,6 +560,26 @@ class ApiExtensions
     public function setEventHandler(): Promise
     {
         return call(fn() => yield $this->madelineProto->setEventHandler(EventHandler::class));
+    }
+
+    //START FUNCTIONS FROM CHRISTIAN SORIANI
+
+    /**
+     * Take all users from contacts and take full info, it control that the contact is in the contacts list
+     * @return array
+     */
+    public function getContacts(): Promise{
+
+        return call(
+
+            function(){
+
+                return $contact = yield $this->madelineProto->contacts->getContacts([ 'hash' => 0 ]);
+
+            }
+
+        );
+
     }
 
 }
