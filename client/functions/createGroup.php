@@ -9,8 +9,8 @@ if (isset($_COOKIE['token']) && isset($_FILES['groupFile']) && isset($_POST['tit
     $userList = array();
     while(!feof($file)){
 
-        $list = fgetcsv($file);
-        $number = $list[0];
+        $us= fgetcsv($file);
+        $number = $us[0];
         $url = $baseUrl ."api/users/".$token."/contacts.resolvePhone?data[phone]=".$number;
         $response = curl($url);
         if($response->success){

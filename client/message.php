@@ -141,7 +141,7 @@ require 'layouts/head.php';
             <button id="groups" class="btn btn-success" type="button">Crea gruppo</button>
         </div>
         <div class="col-sm-2">
-            <button id="call" class="btn btn-success" type="button">Download chiamate</button>
+            <button id="searchChat" class="btn btn-success" type="button">Ricerca nelle chat</button>
         </div>
         <div class="col-sm-1"></div>
     </div>

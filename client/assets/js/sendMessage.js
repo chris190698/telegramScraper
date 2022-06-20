@@ -3,7 +3,7 @@ $('#back').click(function(){
 });
 
 $('#sendMsg').on('click', _ => {
-    if (getCheckedContacts().length > 0) {
+    if (getCheckedContacts().length > 0 || $('input[name="userCsv"]').get(0).files.length !== 0) {
         if($('input[name="messageTextSend"]').val() !== ""){
             sendMsg();
         }else{
@@ -13,7 +13,7 @@ $('#sendMsg').on('click', _ => {
         }
         
     } else {
-        $('#alertText').text('Seleziona almeno un contatto.');
+        $('#alertText').text('Seleziona almeno un contatto oppure carica un file csv');
         $('#alertError').addClass('show');
         setTimeout(_ => $('#alertError').removeClass('show'), 3000);
     }
@@ -34,21 +34,28 @@ $("#check_all_chats").click(function () {
 
 sendMsg = (contacts = getCheckedContacts()) =>{
     $('#modalStripe').attr('aria-valuenow', 100).width('100%');
+    var formData = new FormData();
+    formData.append("message", $('textarea[name="textMessage"]').val());
+    formData.append("sendMessage", 1);
+    if(contacts.length > 0){
+        formData.append("contacts", JSON.stringify(contacts));
+    }
+    if($('input[name="userCsv"]').get(0).files.length !== 0){
+        formData.append("userCSV", $('input[name="userCsv"]')[0].files[0]);
+    }
     $.ajax({
         type: "POST",
-        dataType: "JSON",
         url: serverUrl + "functions/sendMessage.php",
-        data: {
-            contacts: contacts,
-            message: $('textarea[name="textMessage"]').val(),
-            sendMessage: 1,
-        },
+        data: formData,
+        processData: false,
+        contentType: false,
         timeout: 0,
         success: (result) => {
             $('input[name="user"]:checked').each(function () {
                 $(this).prop("checked", false);
             });
             $("#search").val("");
+            $('input[name="userCsv"]').val("");
             $('textarea[name="textMessage"]').val("");
             $("#chat_list tr").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf("") > -1);

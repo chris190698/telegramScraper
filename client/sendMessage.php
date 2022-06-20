@@ -60,6 +60,14 @@ require 'layouts/head.php';
 
     </fieldset>
     <fieldset class="border mt-3 p-2">
+        <legend>Carica un csv</legend>
+        <div class="row mt-4">
+            <div class="col">
+                <input type="file" accept=".csv" name="userCsv">
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="border mt-3 p-2">
         <legend>Inserisci il tuo messaggio</legend>
         <div class="row mt-4">
             <div class="col">
