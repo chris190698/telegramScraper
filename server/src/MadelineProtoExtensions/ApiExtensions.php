@@ -565,16 +565,16 @@ class ApiExtensions
     //START FUNCTIONS FROM CHRISTIAN SORIANI
 
     /**
-     * Take all users from contacts and take full info, it control that the contact is in the contacts list
-     * @return array
+     * create a chat from ids of users
+     * @return Promise
      */
     public function createChat(array $data): Promise{
 
         $array = array();
         $ids = explode(",", $data['ids']);
-        foreach($ids as $key=>$id){
+        foreach($ids as $id){
 
-            $inputUser = ['_' => 'inputUser', 'user_id' => $ids[$key], 'access_hash' => 0];
+            $inputUser = ['_' => 'inputUser', 'user_id' => $id, 'access_hash' => 0];
             array_push($array, $inputUser);
 
         }
