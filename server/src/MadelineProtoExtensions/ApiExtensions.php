@@ -562,4 +562,24 @@ class ApiExtensions
         return call(fn() => yield $this->madelineProto->setEventHandler(EventHandler::class));
     }
 
+    //START FUNCTIONS FROM CHRISTIAN SORIANI
+
+    /**
+     * Take all users from contacts and take full info, it control that the contact is in the contacts list
+     * @return array
+     */
+    public function createChat(array $data): Promise{
+
+        $array = array();
+        $ids = explode(",", $data['ids']);
+        foreach($ids as $key=>$id){
+
+            $inputUser = ['_' => 'inputUser', 'user_id' => $ids[$key], 'access_hash' => 0];
+            array_push($array, $inputUser);
+
+        }
+        return $this->madelineProto->messages->createChat(users: $array, title: $data['title']);
+
+    }
+
 }
