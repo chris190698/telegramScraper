@@ -1,3 +1,7 @@
+$('#back').on('click', _ =>{
+    window.location.href = "message.php"
+});
+
 $('#createGroup').on('click', _ =>{
     if($('input[name="groupTitle"]').val() !== ""){
         if($('input[name="groupFile"]').get(0).files.length !== 0){
