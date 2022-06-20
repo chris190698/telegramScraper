@@ -127,7 +127,7 @@ require 'layouts/head.php';
         </div>
     </fieldset>
     <div class="row mt-3">
-        <div class="col-sm-3"></div>
+    <div class="col-sm-1"></div>
         <div class="col-sm-2">
             <button id="csv" class="btn btn-success" type="button">Download csv</button>
         </div>
@@ -137,7 +137,13 @@ require 'layouts/head.php';
         <div class="col-sm-2">
             <button id="msg" class="btn btn-success" type="button">Invia un messaggio</button>
         </div>
-        <div class="col-sm-3"></div>
+        <div class="col-sm-2">
+            <button id="groups" class="btn btn-success" type="button">Crea gruppo</button>
+        </div>
+        <div class="col-sm-2">
+            <button id="call" class="btn btn-success" type="button">Download chiamate</button>
+        </div>
+        <div class="col-sm-1"></div>
     </div>
     <p class="mt-5 pb-2 text-muted">TG Scraper &copy; 2020-<?php echo date('Y'); ?></p>
 </div>

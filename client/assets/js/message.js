@@ -115,6 +115,10 @@ $("#msg").on('click', _ => {
     window.location.href = "sendMessage.php";
 });
 
+$('#groups').on('click', _ => {
+    window.location.href = "groups.php";
+});
+
 $('.card').on('click', function (e) {
     if (!$(e.target).is('input:checkbox')) {
         let $checkbox = $(this).find('input:checkbox');

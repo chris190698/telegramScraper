@@ -45,7 +45,6 @@ sendMsg = (contacts = getCheckedContacts()) =>{
         },
         timeout: 0,
         success: (result) => {
-            console.log(result);
             $('input[name="user"]:checked').each(function () {
                 $(this).prop("checked", false);
             });

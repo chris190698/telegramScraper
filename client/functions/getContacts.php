@@ -4,7 +4,7 @@ if (isset($_COOKIE['token'])) {
 
     $token = $_COOKIE['token'];
     $contactList = array();
-    $url = $baseUrl . "api/users/" . $token . "/getContacts";
+    $url = $baseUrl . "api/users/" . $token . "/contacts.getContacts?data[hash]=0";
     $output = curl($url);
     
     if($output->success){
