@@ -13,7 +13,7 @@ if (isset($_COOKIE['token'])) {
             }
         }
         if ($find) {
-            if (!str_contains($_SERVER['REQUEST_URI'], 'message.php') && !str_contains($_SERVER['REQUEST_URI'], 'sendMessage.php') && !str_contains($_SERVER['REQUEST_URI'], 'groups.php')) {
+            if (!str_contains($_SERVER['REQUEST_URI'], 'message.php') && !str_contains($_SERVER['REQUEST_URI'], 'sendMessage.php') && !str_contains($_SERVER['REQUEST_URI'], 'groups.php') && !str_contains($_SERVER['REQUEST_URI'], 'chatSearch.php') ) {
                 header('Location: message.php');
                 die();
             }

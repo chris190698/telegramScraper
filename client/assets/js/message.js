@@ -24,6 +24,10 @@ $("#logout").on('click', _ => {
     });
 });
 
+$('#searchChat').on('click', _ =>{
+    window.location.href = "chatSearch.php";
+});
+
 $('#checkboxlist').find('input:checkbox').on('click', function () {
     var showAll = true;
     $("#chat_list tr").hide();
