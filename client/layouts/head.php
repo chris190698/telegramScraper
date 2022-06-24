@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Un semplice scraper di telegram completamente online!">
-    <meta name="author" content="Alessandro Annese, Davide De Salvo">
+    <meta name="author" content="Christian Soriani">
     <meta property="og:title" content="Telegram Scraper">
     <meta property="og:site_name" content="Telegram Scraper">
     <meta property="og:url" content="<?php $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?

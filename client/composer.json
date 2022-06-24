@@ -1,5 +1,5 @@
 {
-    "name": "ax3lfernus/telegramscraper",
+    "name": "chris/telegramscraper",
     "description": "A simple Telegram Scraper.",
     "type": "project",
     "version": "1.2.1",
@@ -13,8 +13,8 @@
     "license": "AGPL-3.0-only",
     "authors": [
         {
-            "name": "Alessandro Annese",
-            "email": "a.annese23@studenti.uniba.it"
+            "name": "Christian Soriani",
+            "email": "c.soriani@studenti.uniba.it"
         }
     ],
     "config": {
