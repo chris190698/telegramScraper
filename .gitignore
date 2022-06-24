@@ -1,5 +1,11 @@
 
 .DS_Store
+<<<<<<< HEAD
 sessions/
 .mysql/
 sessions/users/
+=======
+client/.DS_Store
+client/tmp/
+.vscode/launch.json
+>>>>>>> c73e6b96b6cc6c8a994b79712acebd324d69ff18
